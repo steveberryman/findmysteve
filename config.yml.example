@@ -1,0 +1,24 @@
+app:
+  env: production
+  host: 127.0.0.1
+  port: 8000
+  read_timeout: 2s
+  write_timeout: 5s
+  idle_timeout: 3s
+  context_timeout: 2s
+  time_zone: 'Etc/UTC'
+  debug: true
+
+database:
+  type: postgres
+  host: <hostname>
+  port: 5432
+  name: findmysteve
+  username: <user>
+  password: <password>
+  ssl_mode: disable
+  max_open_conn: 100
+  max_idle_conn: 10
+  max_life_time: 10s
+  debug: true
+

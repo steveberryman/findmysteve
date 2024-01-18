@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for findmysteve on 2024-01-04T15:29:55-08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "findmysteve"
+primary_region = "iad"
+kill_signal = "SIGTERM"
+
+[build]
+
+[env]
+  TZ = "Etc/UTC"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  min_machines_running = 1
+  [http_service.concurrency]
+    type = "connections"
+    hard_limit = 1000
+    soft_limit = 1000
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024
