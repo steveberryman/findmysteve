@@ -134,6 +134,11 @@ def message_hello(say, context):
     lat, lon = get_steve_location()
     say(post_message(lat, lon))
 
+@app.message(re.compile("when is steve.?", re.I))
+def message_when(say, context):
+    lat, lon = get_steve_location()
+    say(f"It is currently {get_steve_time(lat, lon)} for Steve")
+
 @app.event("message")
 def handle_message_events(body, logger):
     return
